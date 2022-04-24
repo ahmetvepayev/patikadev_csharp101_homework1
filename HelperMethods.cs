@@ -4,8 +4,6 @@ namespace HelperMethods
 {
     public static class ConsoleHelperMethods
     {
-        
-        // -----------------Helper Methods----------------//
         public static void PrintDivisible(int[] numbers, int factor)
         {
             foreach (int number in numbers)
