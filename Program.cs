@@ -37,6 +37,22 @@ namespace patikadev_csharp101_homework1
 
     class Homework1
     {
+        public void Print(string text){
+            Console.Write(text);
+        }
+
+        public void PrintLine(string text){
+            Console.WriteLine(text);
+        }
+
+        public void PrintDivisible(int[] numbers, int factor){
+            foreach (int number in numbers){
+                if (number%factor == 0){
+                    number.PrintInteger();
+                }
+            }
+        }
+
         public int ReadInteger(){
             return int.Parse(Console.ReadLine());
         }
@@ -50,24 +66,29 @@ namespace patikadev_csharp101_homework1
         }
 
         public void Question1(){
-            Console.Write("Enter a positive integer: ");
+            Print("Enter a positive integer: ");
 
             int n = ReadInteger();
             int[] numbers = new int[n];
 
-            Console.WriteLine($"Enter {n} positive integers. Press Enter after each integer: ");
+            PrintLine($"Enter {n} positive integers. Press Enter after each integer: ");
             numbers = ReadInteger(n);
 
-            Console.WriteLine("Even integers:");
-            foreach (int number in numbers){
-                if (number%2 == 0){
-                    number.PrintInteger();
-                }
-            }
+            PrintLine("Even integers:");
+            PrintDivisible(numbers, 2);
         }
 
         public void Question2(){
-            Console.Write("Question2");
+            PrintLine("Enter two positive integers. Press Enter after each integer:");
+            int n = ReadInteger();
+            int m = ReadInteger();
+            int[] numbers = new int[n];
+
+            PrintLine($"Enter {n} positive integers. Press Enter after each integer: ");
+            numbers = ReadInteger(n);
+
+            PrintLine($"Integers divisible by {m}:");
+            PrintDivisible(numbers, m);
         }
 
         public void Question3(){
