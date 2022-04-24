@@ -1,3 +1,5 @@
+using HelperMethods;
+using static HelperMethods.ConsoleHelperMethods;
 using ExtensionMethods;
 
 namespace Homework1NS
@@ -54,87 +56,6 @@ namespace Homework1NS
 
             PrintLine("Symbol count without whitespaces");
             PrintSymbolCount(input);
-        }
-
-
-        // -----------------Helper Methods----------------//
-        public void PrintDivisible(int[] numbers, int factor)
-        {
-            foreach (int number in numbers)
-            {
-                if (number%factor == 0)
-                {
-                    number.PrintInteger();
-                }
-            }
-        }
-
-        public void Print(string text)
-        {
-            Console.Write(text);
-        }
-
-        public void Print(object printable)
-        {
-            Console.WriteLine(printable.ToString());
-        }
-
-        public void PrintLine(string text)
-        {
-            Console.WriteLine(text);
-        }
-
-        public void PrintLine(object printable)
-        {
-            Console.WriteLine(printable.ToString());
-        }
-
-        public void PrintReverseArray(object[] array)
-        {
-            for (int i = array.Length-1; i >= 0; i--)
-            {
-                PrintLine(array[i]);
-            }
-        }
-
-        public void PrintWordCount(string text)
-        {
-            PrintLine(text.Split(' ').Length);
-        }
-
-        public void PrintSymbolCount(string text)
-        {
-            PrintLine(text.Replace(" ", "").Length);
-        }
-
-        public string ReadValue()
-        {
-            return Console.ReadLine();
-        }
-
-        public T ReadValue<T>() where T: struct, IConvertible
-        {
-            return (T) Convert.ChangeType(Console.ReadLine(), typeof(T));
-        }
-
-        public string[] ReadValues(int n)
-        {
-            string[] words = new string[n];
-            for (int i = 0; i < n; i++)
-            {
-                words[i] = Console.ReadLine();
-            }
-            return words;
-        }
-
-        public T[] ReadValues<T>(int n) where T: struct, IConvertible
-        {
-            T[] values = new T[n];
-            for (int i = 0; i < n; i++)
-            {
-                values[i] = ReadValue<T>();
-            }
-            return values;
         }
     }
 }

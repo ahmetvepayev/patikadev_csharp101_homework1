@@ -1,6 +1,6 @@
 namespace ExtensionMethods
 {
-    public static class ConsoleMethods
+    public static class ConsoleExtensionMethods
     {
         public static void PrintInteger(this int number)
         {
