@@ -46,11 +46,29 @@ namespace Homework1NS
 
         public void Question4()
         {
-            Console.Write("Question4");
+            PrintLine("Type a sentece and press Enter:");
+            string input = ReadValue();
+
+            PrintLine("Word count:");
+            PrintWordCount(input);
+
+            PrintLine("Symbol count without whitespaces");
+            PrintSymbolCount(input);
         }
 
 
         // -----------------Helper Methods----------------//
+        public void PrintDivisible(int[] numbers, int factor)
+        {
+            foreach (int number in numbers)
+            {
+                if (number%factor == 0)
+                {
+                    number.PrintInteger();
+                }
+            }
+        }
+
         public void Print(string text)
         {
             Console.Write(text);
@@ -71,23 +89,22 @@ namespace Homework1NS
             Console.WriteLine(printable.ToString());
         }
 
-        public void PrintDivisible(int[] numbers, int factor)
-        {
-            foreach (int number in numbers)
-            {
-                if (number%factor == 0)
-                {
-                    number.PrintInteger();
-                }
-            }
-        }
-
         public void PrintReverseArray(object[] array)
         {
             for (int i = array.Length-1; i >= 0; i--)
             {
                 PrintLine(array[i]);
             }
+        }
+
+        public void PrintWordCount(string text)
+        {
+            PrintLine(text.Split(' ').Length);
+        }
+
+        public void PrintSymbolCount(string text)
+        {
+            PrintLine(text.Replace(" ", "").Length);
         }
 
         public string ReadValue()
