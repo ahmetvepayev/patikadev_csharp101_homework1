@@ -33,7 +33,15 @@ namespace Homework1NS
 
         public void Question3()
         {
-            Console.Write("Question3");
+            Print("Enter a positive integer: ");
+            int n = ReadValue<int>();
+            string[] words = new string[n];
+
+            PrintLine($"Enter {n} words. Press Enter after each word:");
+            words = ReadValues(n);
+
+            PrintLine("Reverse:");
+            PrintReverseArray(words);
         }
 
         public void Question4()
@@ -48,9 +56,19 @@ namespace Homework1NS
             Console.Write(text);
         }
 
+        public void Print(object printable)
+        {
+            Console.WriteLine(printable.ToString());
+        }
+
         public void PrintLine(string text)
         {
             Console.WriteLine(text);
+        }
+
+        public void PrintLine(object printable)
+        {
+            Console.WriteLine(printable.ToString());
         }
 
         public void PrintDivisible(int[] numbers, int factor)
@@ -61,6 +79,14 @@ namespace Homework1NS
                 {
                     number.PrintInteger();
                 }
+            }
+        }
+
+        public void PrintReverseArray(object[] array)
+        {
+            for (int i = array.Length-1; i >= 0; i--)
+            {
+                PrintLine(array[i]);
             }
         }
 
