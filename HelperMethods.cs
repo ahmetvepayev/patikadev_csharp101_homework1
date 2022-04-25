@@ -22,7 +22,7 @@ namespace HelperMethods
 
         public static void Print(object printable)
         {
-            Console.WriteLine(printable.ToString());
+            Console.Write(printable.ToString());
         }
 
         public static void PrintLine(string text)
